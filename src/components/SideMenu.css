@@ -1,0 +1,260 @@
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Separates content and email to top and bottom */
+  width: 150px; /* Desktop width */
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Fill the screen height */
+  z-index: 1001;
+  background-color: #ffffff;
+  padding: 40px 10px 10px 10px; /* Adjusted padding for a better layout */
+  transform: translateX(0); /* Ensure it is visible */
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+
+.user-email-sidebar {
+  
+  width: 90%;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  margin-top: auto; /* This will push the email to the bottom of the flex container */
+  display: block; 
+  margin-bottom: 30%;
+  margin-left: 1px;
+  
+}
+
+/* Ensure visibility on mobile */
+@media (max-width: 768px) { 
+  .side-menu {
+    width: 65%; /* Smaller width on mobile */
+    transform: translateX(-100%); /* Start off-screen */
+  }
+  .side-menu.open {
+    transform: translateX(0); /* Slide into view */
+    width: 65%; /* Maintain consistent width when open */
+  }
+  .side-menu.closed {
+    transform: translateX(-100%); /* Hide when closed on smaller screens */
+  }
+
+}
+
+
+.menu-content {
+  overflow: hidden; /* Add it to the menu-content class instead */
+  flex-grow: 1; /* Allow the content to grow and fill available space */
+  display: flex; /* Flexbox for the content */
+  flex-direction: column; /* Ensure vertical stacking */
+  padding-top: 20px;
+  padding-left: 7px;
+
+}
+
+
+
+.side-menu.closed {
+  width: 0; /* Set the width to 0 when closed */
+}
+
+.side-menu ul li {
+  margin-bottom: 0px; /* Increase the margin between items */
+  padding: 0px; /* Add padding around each item */
+  border-radius: 2px; /* Add rounded corners */
+  transition: background-color 0.2s; /* Smooth transition on hover */
+   /* Add a subtle bottom border */
+  letter-spacing: 0.05em; /* Adjust the spacing between letters */
+  font-size: 100%; /* Using percentage */
+  text-align: left;
+  color: rgb(0, 0, 0);
+
+}
+
+.side-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.side-menu ul li a:hover {
+  background-color: #b14343; /* Light background on hover */
+}
+
+.side-menu ul li a { /* Style the anchor tags directly */
+  display: block; /* Make it fill the entire li */
+  padding: 5%; /* Increase padding */
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit color from parent */
+  border-radius: 2px; /* Add rounded corners */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's width and height */
+  color: rgb(0, 0, 0); /* Set text color to white for better contrast */
+  font-weight: 500;
+}  
+
+.menu-toggle-button {
+  position: fixed; /* Use fixed positioning for consistent placement */
+  top: 15px; /* Keep this as is or adjust if the design needs */
+  left: 0px;
+  z-index: 1001; /* Ensures it's above the side menu and header */
+  padding: 10px;
+  margin-left: 30px; /* Ensure this aligns with any other elements if needed */
+  background: #f42f28; /* Default red background */
+  border: 1px solid #f42f28;
+  cursor: pointer;
+}
+
+.menu-toggle-button.home-page {
+  background: #0F0F0F; /* Black background for homepage */
+  border: 1px solid #0F0F0F;
+}
+.menu-toggle-button.open {
+  background: none; /* White background for open state */
+  border: none;
+  
+}
+/* Transform hamburger into 'X' when menu is open */
+.menu-toggle-button.open .hamburger-icon div,
+.menu-toggle-button.open .hamburger-icon::before,
+.menu-toggle-button.open .hamburger-icon::after {
+  background-color: #000000; /* Change lines to black */
+  border: none;
+
+}
+.back-button {
+  position: absolute; /* Position relative to nearest positioned ancestor */
+  top: 20px; /* Distance from the top of the container */
+  left: 15px;
+  padding: 12px 30px; /* Larger padding for a bigger button */
+  font-size: 18px; /* Larger font size for better readability */
+  background-color: #f42f28; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor pointer to indicate clickable */
+  z-index: 1000; /* Ensures the button stays on top of other content */
+
+}
+
+.back-button:hover {
+  background-color: #c33628; /* Darker shade on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Larger shadow on hover for lifting effect */
+}
+
+
+/* Transform hamburger into 'X' when menu is open */
+.menu-toggle-button.open .hamburger-icon div {
+  transform: scale(0); /* Hide the middle line */
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle-button.open .hamburger-icon::before,
+.menu-toggle-button.open .hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* Full width for all lines */
+  height: 1px; /* Thickness of each line */
+  top: 50%; /* Move both pseudo-elements to the center */
+  background-color: #000000; /* Start with black color for clarity */
+  transform: translateY(-50%) rotate(45deg); /* Rotate to form an 'X' */
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  left: -15px;
+
+}
+
+.menu-toggle-button.open .hamburger-icon::after {
+  transform: translateY(-50%) rotate(-45deg); /* Opposite angle for a perfect 'X' */
+}
+.hamburger-icon {
+  width: 24px;  /* Width of the hamburger icon */
+  height: 18px;  /* Total height of the hamburger icon */
+  position: relative;  /* Positioning context for pseudo-elements */
+}
+
+.hamburger-icon div,
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 100%;  /* Full width for all lines */
+  height: 2px;  /* Thickness of each line */
+  background-color: #ffffff;  /* Ensure the same color for all lines */
+  position: absolute;  /* Position them absolutely relative to .hamburger-icon */
+}
+
+.hamburger-icon div {  /* Middle line */
+  top: 50%;  /* Center the middle line vertically */
+  transform: translateY(-50%);  /* Adjust middle line to be centered */
+}
+
+.hamburger-icon::before {  /* Top line */
+  top: 0;  /* Position at the top */
+}
+
+.hamburger-icon::after {  /* Bottom line */
+  bottom: 0;  /* Position at the bottom */
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  transition: opacity 0.3s ease-in-out; /* Add a transition for opacity */
+}
+
+.side-menu.closed ul {
+  opacity: 0; /* Hide the menu items when closed */
+}
+.overlay {
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1000; /* Make sure it's below the side menu but above everything else */
+}
+
+.side-menu.open + .overlay {
+  display: block;
+}
+
+.side-menu.closed + .overlay {
+  display: none;
+}
+
+
+
+.side-menu.closed .user-email-sidebar {
+  display: none; /* Use display none to hide completely */
+}
+
+.side-menu.open .user-email-sidebar {
+  opacity: 1; /* Show when the menu is open */
+  pointer-events: auto; /* Enable pointer events when visible */
+}
+
+
+/* Mobile-specific styles */
+@media (min-width: 768px) { 
+  .side-menu {
+      width: 65%; /* Smaller width on mobile */
+      transform: translateX(-100%); /* Start off-screen */
+  }
+  .side-menu.open {
+      transform: translateX(0); /* Slide into view */
+      width: 65%; /* Maintain consistent width when open */
+  }
+  .side-menu.closed {
+    transform: translateX(-100%); /* Hide when closed on smaller screens */
+  }
+
+
+}  

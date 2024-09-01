@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/images/logo_1.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000000" />
+    <meta name="Xeontech App" content="Xeontech App" />
+    <link rel="apple-touch-icon" href="/images/logo_1.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Xenontech</title>
+</head>
+<body>
+    <noscript>Easter Egg Code</noscript>
+    <div id="root"></div>
+    <!-- Ensure only one script to initialize Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- Popup Modal for Installation -->
+    <div id="installModal" class="modal modal-large-text">
+        <h2>Install App</h2>
+        <p>Install our app for a better experience.</p>
+        <button id="confirmInstall" class="popup-button">Install</button>
+        <button onclick="hideInstallModal()" class="popup-button">Not Now</button>
+    </div>
+
+    <!-- Custom script for PWA install prompt -->
+    <script>
+      let deferredPrompt;
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent the mini-infobar from appearing on mobile
+        e.preventDefault();
+        deferredPrompt = e;  // Save the event so it can be triggered later.
+        // Show the modal to prompt the user to install the PWA
+        showInstallModal();
+      });
+
+      function showInstallModal() {
+        const modal = document.getElementById('installModal');
+        modal.style.display = 'block';
+      }
+
+      function hideInstallModal() {
+        const modal = document.getElementById('installModal');
+        modal.style.display = 'none';
+      }
+
+      document.getElementById('confirmInstall').addEventListener('click', () => {
+        // Show the install prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+          hideInstallModal(); // Hide modal after choice
+        });
+      });
+    </script>
+</body>
+</html>

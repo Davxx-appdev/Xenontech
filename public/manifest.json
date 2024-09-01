@@ -1,0 +1,27 @@
+{
+  "short_name": "Xenontech",
+  "name": "Xenontech",
+  "icons": [
+    {
+      "src": "images/logo1.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/logo_1.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo_1.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#000000",
+  "description": "Xeontech Application"
+}

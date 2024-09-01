@@ -1,0 +1,1347 @@
+/* General Styles */
+.App {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure it takes the full width */
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: flex-start; /* Align items to the left */
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 0; /* Initially no padding, will be set dynamically */
+  margin-top: 0;
+  box-sizing: border-box;
+  padding-top: 0;
+  
+}
+
+.content-nosearch {
+  
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.content-nosearch-home {
+  text-align: right;
+  width: 100%;
+  height: 100vh; /* Adjust based on your top bar height */
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: flex-start;
+  top: 0;
+  z-index: 300;
+  background-color: #EB2F26;
+}
+
+.app-container-noscroll {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Full width */
+  overflow: hidden; /* Important: Prevents scrolling in both directions */
+  position: relative; /* Set position context */
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container-home {
+  position: relative;
+  overflow: auto;
+  
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px; /* Adjust as needed */
+  background-color: #0F0F0F;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 20px;
+  z-index: 499;
+  padding-top: 6%;
+
+}
+
+.user-info {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+
+
+.page-links-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr; /* This ensures all rows have the same height */
+  gap: 8px;
+  margin-top: 50%;
+  z-index: 500;
+  background-color: #EB2F26;
+  border-radius: 5%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+  padding-bottom: 5%;
+  
+}
+
+.page-link-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #EB2F26;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2); /* Increased shadow */
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.page-link-box:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Even more pronounced shadow on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+.page-link-icon {
+  width: 50px;  /* adjust as needed */
+  height: 50px; /* adjust as needed */
+  margin-bottom: 10px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -100px;
+  z-index: 500;
+ 
+}
+
+.xtech-logo {
+  max-width: 200px;  /* Adjust this value as needed */
+  height: auto;
+  z-index: 500;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #f42f28;
+  color: white;
+  position: fixed;
+  top: 0;  /* Ensure it's always at the top */
+  left: 0;
+  width: 100%;
+  z-index: 499;
+  box-sizing: border-box;
+  padding: 2.8vh 12px; /* Consistent padding */
+  font-size: calc(0.8em + 0.2vh); /* Responsive font size */
+  font-weight: bold;
+  
+}
+.school-details-header {
+  background-color: #f42f28; /* Lighter background for the school details page */
+  padding: 0px; /* Smaller padding */
+  
+}
+
+
+/* Custom Header Styling for School and Staff Details Pages */
+.App.show-header .custom-details-header {
+  display: flex; /* Example: Change display to flex for these pages */
+  padding-bottom: 11%; /* Example: Change padding-bottom as needed */
+  background-color: #f42f28; /* Example: Different background color */
+ 
+}
+
+
+
+.header-content {
+  margin-left: 0;
+  color: white;
+  padding-top: 1%;
+  margin-top: 5%;
+  margin-bottom: -2%;
+  padding-left: 2%;
+}
+
+.search-input::placeholder {
+  color: white;
+  opacity: 1; 
+}
+
+.search-input {
+  width: 100%; /* Adjust width to make space for the clear button */
+  padding: 10px 15px; /* Right padding reduced to accommodate the button */
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f84a43;
+  color: white;
+}
+
+.clear-search {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #d9d9d9;
+  border: none;
+  font-size: 19px;
+  cursor: pointer;
+  color: #5e5d5d;
+  height: 25px; /* Set the height of the button */
+  width: 25px; /* Set the width of the button */
+  border-radius: 50%; /* Make the button a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove any padding to center the '×' symbol */
+}
+
+
+.clear-search:hover {
+  color: #d9d9d9;
+}
+
+.search-container {
+  position: relative;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  
+}
+
+
+
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 5px;
+  
+
+}
+
+
+.list-item {
+  padding: 4px 4px; /* Add padding to each list item */
+  background-color: #fff;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  justify-content: space-between; /* Adjusted to space between */
+  width: 100%; /* Use full width */
+  box-sizing: border-box;
+  position: relative; /* Make the list item the reference for absolute positioning */
+  border-bottom: 1px solid #ccc; /* Adds a light gray border between items */
+  
+}
+
+/* Ensure text and links are aligned to the left */
+.list-item a {
+  color: inherit;
+  text-decoration: none;
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 0; /* No extra margin */
+  display: flex; /* Ensure flex display for correct layout */
+  justify-content: space-between; /* Space between items */
+}
+
+/* Style the list item header and ensure left alignment */
+.list-item h3 {
+  font-size: 17px; /* Make name text larger */
+  font-weight:600;
+  color: #333333; /* Dark grey for readability */
+  text-align: left;
+  margin: 0; /* No extra margin */
+  margin-bottom: 3px; /* Slight margin to separate from position text */
+}
+
+.list-item p {
+  font-size: 13px; /* Make position text smaller */
+  color: grey; /* Make position text grey */
+  margin: 0; /* No extra margin */
+}
+
+.list-item.clicked {
+  background-color: #dcdcdc; /* Light gray background */
+  color: #555; /* Darker text color */
+}
+
+
+.profile-pic-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: auto; /* Push to the right */
+}
+body, input, button, textarea, h1, h2, h3, h4, p {
+  font-family: 'Arial', sans-serif; /* Example: Set a global font family */
+}
+
+/* Custom Styles for Centering the Google Button */
+.login-container {
+  height: 100vh; /* Subtracting the 40px padding from the viewport height */
+  overflow: hidden; /* Prevent any content from causing scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  box-sizing: border-box;
+  border: 20px solid red;
+}
+.app-logo {
+  max-width: 80%; /* Adjusts based on the parent container's width */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Ensures it's treated as a block-level element with proper width */
+  margin: 0 auto; /* Centers the logo horizontally */
+}
+.login-container .app-logo, .xtech-image {
+  
+  max-width: 90%; /* Ensure images do not cause overflow */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 15px; /* Adjust spacing to fit within the viewport */
+}
+
+.google-btn {
+  align-self: center; /* Ensure button aligns to center in flex container */
+  margin-top: 20px; /* Space above the button */
+}
+
+.logout-btn {
+  background-color: #EB2F26; /* Google blue */
+  color: white;
+  border: #000000;
+  padding: 12px 24px; /* Increased padding for larger size */
+  font-size: 20px; /* Larger font size for better readability */
+  border-radius: 10px; /* Slightly larger radius for aesthetics */
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+.logout-btn:hover {
+  background-color: #357ae8; /* Darker blue on hover */
+}
+
+.logout-btn:active {
+  background-color: #3367D6; /* Even darker blue when pressed */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  background-color: white;
+  color: #f44336;
+  border: 1px solid #f44336;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-left: -15px;
+  margin-top: -40%;
+  position: relative; /* Add this to position the pseudo-element relative to this button */
+}
+
+.back-button::before {
+  content: '< '; /* Unicode character for a left arrow */
+  display: inline-block;
+  margin-right: 5px; /* Space between the arrow and the text */
+}
+
+
+.back-button:hover {
+  background-color: #f44336;
+  color: white;
+  border: 1px solid white;
+}
+
+
+
+.detail-item {
+  font-size: 15px; /* Adequate size for readability */
+  padding: 5px 0; /* Padding for each item */
+  border-bottom: 1px solid #eee; /* Separator */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Align items with space between them */
+  align-items: center; /* Center items vertically */
+}
+
+.detail-item-label {
+  font-weight: bold; /* Bold for labels */
+  color: #666; /* Dark grey for text */
+  flex: 1;
+}
+
+.detail-item-value {
+  margin-left: 10px; /* Space between label and value */
+  color: #000000;
+}
+
+
+.current-usage, .usage-header {
+  font-size: 12px !important; /* Make the font size consistent */
+  color: #f44336; /* Red color for both headings */
+  padding-top: .5px;
+}
+
+.current-usage {
+  position: relative;
+  margin-top: 10px; /* Adjust margin top as needed */
+  /* Add any additional styles specific to .current-usage */
+}
+
+.current-usage h2 {
+  color: #f44336; /* Red color for the header */
+  font-size: 15px; /* Smaller font size for the header */
+}
+
+
+.help-page .app-container {
+
+  overflow-y: hidden; /* Prevent vertical scrolling */
+}
+
+.help-page .app-container * {
+  margin: 0;
+  padding: 0;
+}
+
+.help-page {
+  
+  background-color: #fff; /* Assuming a white background */
+  font-family: Arial, sans-serif;
+}
+.help-list {
+  
+  background-color: #fff; /* Light grey background */
+  max-width: 100%;
+  padding: 10px; 
+  padding-top: 5%; /* Increased padding-top to move the list down */
+  
+
+}
+
+.help-section {
+  background-color: #fff; /* Light grey background for each section */
+  padding: 10px;
+  
+}
+
+
+
+.help-item {
+  border-bottom: 2px solid #ddd; /* Add a border to separate each help item */
+  padding-bottom: 15px; /* Add some padding at the bottom for spacing */
+  margin-bottom: 15px; /* Add some margin at the bottom for spacing */
+}
+
+.help-item:last-child {
+  border-bottom: none; /* Remove the border from the last item */
+}
+
+.help-item h3 {
+  font-size: 19px; /* Same size as the other pages */
+  font-weight: bold;
+  color: #333333; /* Dark grey for readability */
+  margin: 0; /* No extra margin */
+  margin-bottom: 0px; /* Slight margin to separate from the descriptions */
+  padding-left: 2.5%;
+}
+
+.help-item ul {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 20px; /* Indent items */
+  margin: 0; /* No extra margin */
+}
+
+.help-item li {
+  font-size: 14px; /* Smaller text for descriptions */
+  color: #808080; /* Smokey grey color */
+  padding: 3px 0; /* Vertical padding for each item */
+  text-indent: -10px; /* Indent bullet points */
+  margin-left: 15px; /* Align text properly under bullet points */
+  position: relative;
+  padding-left: 10px; /* Add padding to the left to push text away from the bullet */
+}
+
+.help-item li.no-bullet::before {
+  content: ""; /* Removes the custom bullet point */
+  font-weight:bold;
+  
+
+}
+.help-item li.no-bullet {
+  margin-left: -10px;
+  padding-top: 5px;
+  color: #f42f28; /* Red color for links */
+ 
+  
+}
+.help-item a {
+  color: #f42f28; /* Red color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.help-item a:hover {
+  text-decoration: underline; /* Add underline on hover for better interaction feedback */
+}
+
+.help-item li::before {
+  content: "➤ "; /* Custom bullet point */
+  position: absolute;
+  left: -15px; /* Position bullet points outside the indent */
+  top: 1px; /* Push the bullet up slightly */
+}
+
+ul {
+  list-style-type: none; /* Hides default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: block; /* This makes sure each list item starts on a new line */
+  padding: 8px 0; /* Adds vertical padding */
+  margin: 1px; /* Adjust margin as needed */
+}
+
+li:last-child {
+  border-bottom: none; /* Removes the border from the last item */
+}
+
+.link-container {
+  margin-top: 0; /* Adjust this as needed or remove it if no additional spacing is desired */
+  padding: 0; /* Adjust or remove padding for tighter integration with the text */
+  border-top: none; /* Removes the top border that separates the contact link */
+}
+
+.link-container a {
+  display: inline; /* Changes display from block to inline for a more integrated look */
+  color: #f42f28; /* Keeps the link color red for visibility */
+  text-decoration: none; /* Keeps the link without underline */
+}
+
+.link-container a:hover {
+  text-decoration: underline; /* Adds underline on hover for better interaction feedback */
+}
+
+.staff-photo {
+  border: 1px solid rgb(255, 255, 255); 
+  width: 50px; /* Set the width of the photo */
+  height: 50px; /* Set the height of the photo */
+  border-radius: 10px; /* Adds slightly rounded corners */
+  margin-left: 12px;
+}
+
+.staff-link {
+  display: flex; /* Align items in a row */
+  align-items: center !important; /* Center items vertically */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color from parent */
+  width: 100%; /* Ensure the link takes the full width */
+  justify-content: space-between;
+  padding-top: 2%;
+}
+
+.staff-list {
+  width: 100%; /* Ensure the staff list takes the full width */
+  padding-top: 5px;
+}
+
+.bookmark-list {
+  width: 100%; /* Ensure the staff list takes the full width */
+  padding-top: 43%;
+}
+
+
+.staff-info {
+  display: flex;
+  flex-direction: column; /* Stack name and position vertically */
+  padding-left: 17px;
+  width: calc(100% - 40px); 
+  font-size: 10px;
+  
+}
+
+.arrow-icon {
+  width: 7px; /* Set the width of the arrow */
+  height: 10px; /* Set the height of the arrow */
+  margin-left: auto; /* Push the arrow to the far right */
+  padding-right: 3.7%;
+  padding-bottom: 7px;
+}
+
+.school-details-header{
+  padding: 9%;
+}
+.school-details-header1{
+  background-color: #ffffff; /* Lighter background for the school details page */
+  padding-left: 5.5%; 
+  margin-top: -15px; /* Removes margin from the top */
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+}
+
+
+
+.school-details-container {
+  background: #FFF;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  width: 100%; /* Force it to take up 100% of its parent's width */
+  max-width: none; /* Remove any maximum width constraints */
+  margin: 0 auto; /* Optional: Center align if needed */
+  padding-left: 1%; 
+  padding-right: 7%; 
+  padding-top: 2%;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+.feedback-details-container {
+  background: #FFF;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  width: 100%; /* Force it to take up 100% of its parent's width */
+  max-width: none; /* Remove any maximum width constraints */
+  margin: 0 auto; /* Optional: Center align if needed */
+  padding-right: 5%; 
+  padding-top: 1px;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.details-section {
+  display: flex;
+  width: 100%; /* Ensures it doesn't extend beyond its parent */
+  max-width: 100%; /* Prevents the section from extending beyond the viewport width */
+  flex-direction: column;
+  height: calc(100vh - 150px); /* Adjust height calculation as needed */
+  padding: 10px;
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+  margin-top: -22px; /* Adjust margin if it causes any layout shift */
+  overflow-x: hidden; /* Hides horizontal overflow specifically */
+  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  margin-left: 3.3%;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.notes-input {
+  flex-grow: 1;
+  width: 99.5%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  overflow-y: auto; 
+  margin-top: 80px;
+  overflow-x: hidden; /* Hides horizontal overflow specifically */
+  box-sizing: border-box;
+  font-size: 18px;
+
+}
+
+
+.details-section-feedback {
+  padding-left: 0%; 
+  padding-right: 0%;
+  margin-top: -25px; /* Reduced margin-top to move elements up */
+  box-sizing: border-box; /* Include padding and border in the width */
+
+}
+
+
+.staff-detail-label{
+
+  padding-left: 1.5%;
+}
+.staff-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+
+.staff-header {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+
+.staff-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.position-text {
+  font-size: 18px;
+  color: grey;
+  margin: 0;
+ 
+}
+.staff-photo-details {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+
+.staff-details-item{
+ 
+}
+.staff-details-container .staff-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Add an ellipsis to text that overflows */
+  padding-top: 8%;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+.staff-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; /* Add a light grey line */
+}
+.staff-detail-item:last-child {
+  border-bottom: none; 
+}
+.staff-detail-label {
+  font-weight: bold;
+  color: #666;
+}
+
+.staff-detail-link {
+  color: red;
+  text-decoration: none;
+}
+
+.staff-detail-link:hover {
+  text-decoration: underline;
+}
+
+.staff-info-details {
+  display: flex;
+  flex-direction: column;
+   flex-grow: 1;
+}
+
+.loading-message{
+  padding-top: 200px;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 24px;
+  background-color: #f0f0f0;
+}
+
+.no-bookmarks-message{
+  padding-top: 200px;
+  text-align: center;
+  color: #7a7a7a;
+
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-top: 5%;
+  color: #838383;
+ 
+}
+
+.feedback-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Arial', sans-serif; /* Use the same font family */
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #f42f28;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 55%;
+}
+
+.submit-button:hover {
+  background-color: #357ae8;
+}
+
+.submit-button:active {
+  background-color: #3367D6;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  padding-left: 5%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(88, 88, 88, 0.75);
+  color: white;
+  font-size: 20px;
+
+}
+
+
+.last-updated {
+  position: absolute;
+  right: 0px; /* Adjust as needed */
+  bottom: 0px; /* Adjust as needed */
+  top: 120px;
+  width: 350px; /* Adjust width as needed */
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+  padding-top: 3%;
+}
+
+.usage-note {
+  font-size: 12px;
+  color: red;
+  
+  margin-top: 0px;
+}
+
+
+.page-transition-enter {
+  opacity: 0;
+  
+}
+.page-transition-enter-active {
+  opacity: 1;
+ 
+  transition: opacity 500ms ease-in-out, transform 30s ease-in-out;
+}
+.page-transition-exit {
+  opacity: 1;
+  
+}
+.page-transition-exit-active {
+  opacity: 0;
+  ;
+  transition: opacity 500ms ease-in-out, transform 30s ease-out;
+}
+
+
+.todo-list-container {
+  width: 100%;
+  margin-top: 0;
+  background: #fff;
+  align-content: center;
+  align-items:center ;
+  border-radius: 8px;
+  margin-bottom: 0%;
+  z-index: 999;
+  text-align: center ; /* Centers the text inside */
+  overflow-x: hidden; 
+  box-sizing: border-box;
+}
+
+
+.todo-header{
+  background-color: #f42f28; /* Lighter background for the school details page */
+  color: #ffffff;
+  padding-top: 45px; /* Removes margin from the top */
+  padding-left: 5%;
+  padding-bottom: 1px;
+  width: 100% !important;
+  align-content: left;
+  align-items: left ;
+  text-align: left ; /* Centers the text inside */
+  z-index: 999;
+  font-size: calc(0.8em + 0.11vh);
+  font-weight: bold;
+
+}
+
+
+.input-area input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+.input-area {
+  display: flex; /* Use flexbox to align children inline */
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 15px; /* Space below the input area */
+  padding-top: 20px;
+  width: 93.5%;
+  padding-left: 4%;
+  resize: none;
+  
+}
+
+
+.task-item ul {
+  list-style-type: none;
+  padding: 0;
+  width: 90%;
+  padding-left: 5%;
+  font-size: 20px;
+}
+
+
+.separator {
+  padding-top: 10px;
+  margin: 10px 0;
+  text-align: center;
+  position: relative;
+  
+}
+
+.separator hr {
+  border: none;
+  border-top: 2px solid #f42f28;
+  margin: 10px 0;
+  
+ 
+}
+
+.separator span {
+
+  padding: 0 10px;
+  position: relative;
+  top: 0px;
+
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid lightgray;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+.task-text-container {
+  flex-grow: 1;
+  margin-right: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin-left: 2%;
+  text-align: left;
+  
+}
+
+.task-text {
+  display: block;
+  width: 100%;
+  white-space: pre-wrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding-top: 1px;
+}
+
+.task-input {
+  width: 100%;
+  padding: 0px;
+  padding-left: 10px;
+  padding-top: 16.5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.task-toggle {
+  cursor: pointer;
+  flex-shrink: 0;
+  padding-right: 10px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+
+.task-item.completed .task-text {
+  text-decoration: line-through !important;
+  text-decoration-color: #f42f28 !important;
+  color: #cccccc;
+}
+
+.task-item.completed .task-toggle {
+  color: #4CAF50;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+/* Ensure no text decoration on the toggle span */
+.task-item .task-toggle {
+  text-decoration: none !important;
+}
+
+
+
+.task-item:hover {
+  background-color: #e9e9e9;
+}
+
+
+.task-input:disabled {
+  background: none;
+  color: inherit;
+}
+
+
+.add-task-button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 0 5px 4px 0; /* Rounded corners on the right side only */
+  color: white;
+  cursor: pointer;
+  font-size: 35px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding-right: 13px;
+  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.add-task-button:hover {
+  background-color: #45a049;
+}
+
+.clear-completed-button {
+  padding: 12px 30px;
+  background-color: #f44336; /* A strong red color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.separator hr {
+  margin: 5px 0;
+}
+
+.separator span {
+  display: block;
+  text-align: left;
+  padding-left: 4%;
+  color: #f42f28;
+  font-size: 16px;
+  padding-right: 5%;
+  font-weight: 600;
+}
+.clear-completed-button:hover {
+  background-color: #c33d2e;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+
+.bookmark-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.star-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  transition: fill 0.3s ease;
+  margin-left: 1px;
+  margin-top: 0px;
+}
+
+.bookmark-btn .star-icon {
+  background-color: #ccc; /* Default gray star */
+}
+
+.bookmark-btn.bookmarked .star-icon {
+  background-color: #ffd700; /* Gold star when bookmarked */
+}
+
+
+.bookmarks-container {
+  width: 100%; /* Centers the container horizontally and adds vertical space */
+  border-radius: 8px; /* Rounds the corners for a smoother look */
+  text-align: center ; /* Centers the text inside */
+  box-sizing: border-box;
+  z-index: 999;
+  overflow-x: hidden;
+  
+}
+
+.bookmarks-container h1 {
+  color: #ffffff; /* Sets a dark color for the header */
+}
+.bookmarks-container ul {
+  padding: 0px;
+  padding-right: 2%;
+  padding-top: 1%;
+}
+
+.bookmarks-container li {
+  width: 100%; /* set a minimum width */
+  height: 100%; /* set a minimum height */
+  padding: 3px ;
+  border-bottom: 1px solid #ffffff;
+  text-decoration: none; /* Removes any text decoration */
+  padding-top: 2%;
+}
+
+.bookmarks-container a {
+  color: #fff; /* Ensures text is black, adjust as needed */
+  text-decoration: none; /* Removes underline */
+  font-size: 24px; /* Ensures the text is large enough to be visible */
+  display: inline-block; /* Ensures the link is treated as a block for layout purposes */
+  background-color: #f42f28; /* A contrasting background for visibility */
+  width: 100%; /* set a minimum width */
+  height: 50px; /* set a minimum height */
+  padding-top: 6%;
+  text-align: center;
+
+}
+
+/* styles.css */
+.modal {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 30px;
+  background: rgb(247, 247, 247);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1);
+  font-size: 18px; /* Default font size */
+  display: none; /* Initially hidden */
+}
+
+.modal-large-text {
+  font-size: 1.19rem; /* Larger responsive font size */
+}
+
+.popup-button {
+  padding: 15px 30px; /* Larger padding for a bigger button */
+  font-size: 16px; /* Larger text size for better readability */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  background-color: #007BFF; /* Optional: Add a background color */
+  color: white; /* Optional: Change text color for better contrast */
+  border: none; /* Optional: Remove default border */
+  cursor: pointer; /* Change cursor to indicate clickable */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.popup-button:hover {
+  background-color: #0056b3; /* Darker shade on hover for interactive feel */
+}
+
+
+
+
+@media  (max-width: 540px) {
+
+  
+  .list-item::before {
+    margin-top: 5px;
+    margin-left: 25px;
+  }
+
+
+  .login-container {
+    padding: 10px; /* Smaller padding */
+  }
+
+  .login-container .app-logo, .login-container .xtech-image {
+    max-width: calc(100% - 25px); /* Adjust width for smaller screens */
+    margin-bottom: 20px; /* More space below images */
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  .login-container .google-btn {
+    cursor: pointer;
+    margin-top: 10px; /* Less vertical space above the button */
+  }
+}
+
+
+  @media  (min-width: 768px){
+    
+ 
+
+  .help-list {
+  
+    background-color: #e3e3e3; /* Light grey background */
+    width: 100%;
+    padding: 10px; 
+    padding-top: 5%; /* Increased padding-top to move the list down */
+    
+  
+  }
+
+  .school-details-header {
+    background-color: #f42f28; /* Lighter background for the school details page */
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    
+  }
+
+  .App.show-header .custom-details-header {
+    display: flex; /* Example: Change display to flex for these pages */
+    padding-bottom: 5%; /* Example: Change padding-bottom as needed */
+    background-color: #f42f28; /* Example: Different background color */
+   
+  }
+ 
+ 
+
+  
+  .header-content {
+    margin-left: 0;
+    color: white;
+    padding-top: 0%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    
+  }
+
+  .back-button {
+    margin-left: 0px;
+    margin-top: 0%;
+  }
+
+
+
+
+  }
+
+
+  @media (max-width: 400px) {
+
+
+    .content-nosearch-home{
+      height: 120vh; /* Adjust based on your top bar height */
+    }
+
+
+  }
+    
+  
