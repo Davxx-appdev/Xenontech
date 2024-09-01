@@ -6,29 +6,23 @@ Main Dashboard: The dashboard provides quick access to the app's core functional
 
 ![Screenshot 2024-09-01 140454](https://github.com/user-attachments/assets/4b346577-d2eb-495b-bc83-b1d2d82c01d6)
 
-Schools: Manage and view school details.
-Forms: Access and link forms with ease.
-Videos: Explore and watch categorized instructional videos.
-Staff: Browse and connect with staff members.
-Help: Find technical support contacts and their availability.
-Bookmarks: View and manage bookmarked items.
-To-Do List: Organize and track tasks.
-Feedback: Send feedback using a simple form.
-Logout: Securely sign out of the app.
+Schools Page: The Schools Page displays a list of schools with key details like name, location, and current plan. Users can click on a school to view more information, including visit frequency and usage hours. The page features a search function for quick navigation and allows users to bookmark schools or add personalized notes for tracking.
+
+![Screenshot 2024-09-01 140515](https://github.com/user-attachments/assets/68790457-b739-47b2-a3fe-01fb744b8e7e)
+
 
 To-Do List Page: Users can create, manage, and complete tasks through a simple interface. The page features an input field for new tasks, an add button, and checkboxes to mark tasks as complete. Completed tasks are displayed separately, with an option to clear them for better task management.
 
 ![Screenshot 2024-09-01 141009](https://github.com/user-attachments/assets/ed0718cb-f018-4db0-8469-c2fb0cb64de2)
 
 
-Bookmarks Page: This page displays a list of user-bookmarked schools. It includes a search bar for quick navigation, making it easy to find and manage bookmarked items.
-
-![Screenshot 2024-09-01 140840](https://github.com/user-attachments/assets/4c8afb6f-7e09-4d9e-b063-bfb283c7811c)
-
-
 School Details Page: Users can view in-depth information about a specific school, including the school’s plan, visit frequency, pool hours, and current usage of hours. Users can also add notes and bookmark the school using a star icon for quick future access.
 
 ![Screenshot 2024-09-01 140807](https://github.com/user-attachments/assets/085d8682-46e8-4021-80be-04ca78986d3b)
+
+Bookmarks Page: This page displays a list of user-bookmarked schools. It includes a search bar for quick navigation, making it easy to find and manage bookmarked items.
+
+![Screenshot 2024-09-01 140840](https://github.com/user-attachments/assets/4c8afb6f-7e09-4d9e-b063-bfb283c7811c)
 
 
 Staff Directory Page: A searchable directory of staff members, with details such as name, role, and contact information. Clicking on a staff member provides more detailed information, making it easy for users to find the right person to connect with.
